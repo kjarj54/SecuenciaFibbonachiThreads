@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
     
     cout<<"La secuencia de Fibonacci con "<<n<<" elementos es:\n";
     for (int i = 0; i < n; i++) {
-        cout<<ArrayCompartido[i];
+        cout<<" "<<ArrayCompartido[i];
     }
     cout<<"\n";
     
