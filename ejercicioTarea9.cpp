@@ -41,8 +41,8 @@ int main(int argc, char* argv[]) {
     pthread_create(&thread, NULL, fibonacciThread, args);
     pthread_join(thread, NULL);
     
-    cout<<"La secuencia de Fibonacci con "<<n<<" elementos es:\n";
-    for (int i = 0; i < n; i++) {
+    cout<<"La secuencia de Fibonacci del numero "<<n<<" es:\n";
+    for (int i = 0; i < n+1; i++) {
         cout<<" "<<ArrayCompartido[i];
     }
     cout<<"\n";
