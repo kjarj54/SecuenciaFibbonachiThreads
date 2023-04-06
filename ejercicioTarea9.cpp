@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <iostream>
 
+using namespace std;
 #define MAX_SIZE 100
 
 int ArrayCompartido[MAX_SIZE];
@@ -23,13 +25,13 @@ void* fibonacciThread(void* arg) {
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
-        printf("Error: se requiere un argumento para el número de elementos de Fibonacci.\n");
+        cout<<"Error: se requiere un argumento para el número de elementos de Fibonacci.\n";
         return 1;
     }
     
     int n = atoi(argv[1]);
     if (n <= 0) {
-        printf("Error: el número de elementos de Fibonacci debe ser un entero positivo.\n");
+       cout<<"Error: el número de elementos de Fibonacci debe ser un entero positivo.\n";
         return 1;
     }
     
@@ -39,11 +41,11 @@ int main(int argc, char* argv[]) {
     pthread_create(&thread, NULL, fibonacciThread, args);
     pthread_join(thread, NULL);
     
-    printf("La secuencia de Fibonacci con %d elementos es:\n", n);
+    cout<<"La secuencia de Fibonacci con %d elementos es:\n"<< n;
     for (int i = 0; i < n; i++) {
         printf("%d ", ArrayCompartido[i]);
     }
-    printf("\n");
+    cout<<"\n";
     
     return 0;
 }
