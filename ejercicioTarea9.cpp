@@ -12,7 +12,7 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 void* fibonacciThread(void* arg) {
     int n = *(int*)arg;
     int a = 0, b = 1;
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i <= n; i++) {
         pthread_mutex_lock(&mutex);
         ArrayCompartido[i] = a;
         int tmp = b;
